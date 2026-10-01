@@ -1,0 +1,13 @@
+Road_ID,Road_Name,Road_Type,Distance_Meters,Blocked,Facility_Name,Facility_Type,Latitude,Longitude
+R001,Avinashi Road,primary,850,false,Joseph Hospital,hospital,11.0174578,76.9992837
+R002,Vilankurichi Road,secondary,620,false,Peelamedu E2 Police Station,police,11.0250803,77.0100702
+R003,Campus Main Road,residential,300,true,PSG Hospitals,hospital,11.0194745,77.0072132
+R004,Hospital Road,service,450,false,PSG Hospital Blood Bank,hospital,11.0179259,77.0068069
+R005,East Service Road,service,275,false,Peelamedu E2 Police Station,police,11.0250803,77.0100702
+R006,North Campus Road,residential,390,false,PSG Hospitals,hospital,11.0194745,77.0072132
+R007,Emergency Access Road,service,210,true,PSG Hospital Blood Bank,hospital,11.0179259,77.0068069
+R008,College West Road,residential,510,false,Joseph Hospital,hospital,11.0174578,76.9992837
+R009,Main Gate Road,secondary,735,false,Peelamedu E2 Police Station,police,11.0250803,77.0100702
+R010,South Campus Road,residential,180,false,PSG Hospitals,hospital,11.0194745,77.0072132
+R011,Library Road,service,160,false,PSG Hospital Blood Bank,hospital,11.0179259,77.0068069
+R012,Technology Block Road,residential,425,true,Joseph Hospital,hospital,11.0174578,76.9992837
