@@ -5,6 +5,7 @@ import {
   Navigation,
   AlertTriangle,
   Building2,
+  Terminal,
   Database,
   Layers
 } from 'lucide-react';
@@ -14,6 +15,7 @@ const navItems = [
   { to: '/map', icon: Map, label: 'Map Explorer' },
   { to: '/route', icon: Navigation, label: 'Route Finder' },
   { to: '/incidents', icon: AlertTriangle, label: 'Incidents' },
+  { to: '/mongo-queries', icon: Terminal, label: 'MongoDB Queries' },
   { to: '/facilities', icon: Building2, label: 'Facilities' },
 ];
 
@@ -57,7 +59,7 @@ export default function Sidebar() {
               <Database size={12} />
               MongoDB
             </span>
-            <span className="badge-planned">◌ Planned</span>
+            <span className="badge-connected">● Live</span>
           </div>
         </div>
       </div>

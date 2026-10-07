@@ -8,6 +8,7 @@
     "test:osm": "node src/scripts/testOSM.js",
     "import:osm": "node src/scripts/importOSM.js",
     "clear:osm": "node src/scripts/clearOSM.js",
+    "seed:mongo": "node src/scripts/seedMongo.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

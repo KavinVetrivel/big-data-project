@@ -12,8 +12,14 @@ const {
   setRoadBlockedStatus
 } = require('./services/neo4jService');
 
+const { connectMongoDB } = require('./config/mongo');
+const mongoRoutes = require('./routes/mongoRoutes');
+
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+// Connect to MongoDB
+connectMongoDB();
 
 app.use(express.json());
 
@@ -25,6 +31,8 @@ app.use((req, res, next) => {
   if (req.method === 'OPTIONS') return res.sendStatus(200);
   next();
 });
+
+app.use('/api/mongo', mongoRoutes);
 
 // Root endpoint
 app.get('/', (req, res) => {
@@ -39,7 +47,19 @@ app.get('/', (req, res) => {
       'GET /api/neo4j/buildings?limit=50',
       'GET /api/neo4j/route?from=<roadNodeId>&to=<roadNodeId>&avoidBlocked=true',
       'GET /api/neo4j/nearest-facility?lat=<latitude>&lon=<longitude>&type=<hospital|fire_station|police>',
-      'POST /api/neo4j/roads/block'
+      'POST /api/neo4j/roads/block',
+      'GET /api/mongo/status',
+      'POST /api/mongo/seed',
+      'GET /api/mongo/query/projection',
+      'GET /api/mongo/query/comparison',
+      'GET /api/mongo/query/and',
+      'GET /api/mongo/query/or',
+      'GET /api/mongo/query/nested',
+      'GET /api/mongo/query/array-all',
+      'GET /api/mongo/query/elem-match',
+      'GET /api/mongo/query/array-size',
+      'GET /api/mongo/query/sort-pagination',
+      'GET /api/mongo/query/aggregation'
     ]
   });
 });
