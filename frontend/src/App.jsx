@@ -7,22 +7,57 @@ import RouteFinder from './pages/RouteFinder.jsx';
 import Incidents from './pages/Incidents.jsx';
 import Facilities from './pages/Facilities.jsx';
 import MongoQueries from './pages/MongoQueries.jsx';
+import EmergencyIntelligence from './pages/EmergencyIntelligence.jsx';
 
 export default function App() {
   return (
     <div className="app-shell">
       <Navbar />
+
       <div className="app-body">
         <Sidebar />
+
         <main className="main-content">
           <Routes>
-            <Route path="/" element={<Navigate to="/dashboard" replace />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/map" element={<MapExplorer />} />
-            <Route path="/route" element={<RouteFinder />} />
-            <Route path="/incidents" element={<Incidents />} />
-            <Route path="/mongo-queries" element={<MongoQueries />} />
-            <Route path="/facilities" element={<Facilities />} />
+            <Route
+              path="/"
+              element={<Navigate to="/dashboard" replace />}
+            />
+
+            <Route
+              path="/dashboard"
+              element={<Dashboard />}
+            />
+
+            <Route
+              path="/map"
+              element={<MapExplorer />}
+            />
+
+            <Route
+              path="/route"
+              element={<RouteFinder />}
+            />
+
+            <Route
+              path="/incidents"
+              element={<Incidents />}
+            />
+
+            <Route
+              path="/mongo-queries"
+              element={<MongoQueries />}
+            />
+
+            <Route
+              path="/facilities"
+              element={<Facilities />}
+            />
+
+            <Route
+              path="/emergency-intelligence"
+              element={<EmergencyIntelligence />}
+            />
           </Routes>
         </main>
       </div>
