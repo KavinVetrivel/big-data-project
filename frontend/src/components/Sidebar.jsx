@@ -1,3 +1,4 @@
+
 import { NavLink } from 'react-router-dom';
 import {
   LayoutDashboard,
@@ -7,11 +8,13 @@ import {
   Building2,
   Terminal,
   Database,
-  Layers
+  Layers,
+  ShieldAlert
 } from 'lucide-react';
 
 const navItems = [
   { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
+  { to: '/emergency-intelligence', icon: ShieldAlert, label: 'Emergency Intelligence' },
   { to: '/map', icon: Map, label: 'Map Explorer' },
   { to: '/route', icon: Navigation, label: 'Route Finder' },
   { to: '/incidents', icon: AlertTriangle, label: 'Incidents' },
@@ -27,7 +30,9 @@ export default function Sidebar() {
           <NavLink
             key={to}
             to={to}
-            className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+            className={({ isActive }) =>
+              `nav-link${isActive ? ' active' : ''}`
+            }
           >
             <Icon size={18} />
             {label}
@@ -37,9 +42,19 @@ export default function Sidebar() {
 
       <div className="sidebar-footer">
         <div className="datasource-card">
-          <p style={{ fontSize: '0.7rem', fontWeight: 700, color: '#475569', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+          <p
+            style={{
+              fontSize: '0.7rem',
+              fontWeight: 700,
+              color: '#475569',
+              marginBottom: 8,
+              textTransform: 'uppercase',
+              letterSpacing: '0.04em'
+            }}
+          >
             Data Sources
           </p>
+
           <div className="datasource-item">
             <span style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
               <Database size={12} />
@@ -47,6 +62,7 @@ export default function Sidebar() {
             </span>
             <span className="badge-connected">● Live</span>
           </div>
+
           <div className="datasource-item">
             <span style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
               <Layers size={12} />
@@ -54,6 +70,7 @@ export default function Sidebar() {
             </span>
             <span className="badge-connected">● Live</span>
           </div>
+
           <div className="datasource-item">
             <span style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
               <Database size={12} />
