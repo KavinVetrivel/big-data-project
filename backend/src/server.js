@@ -14,6 +14,7 @@ const {
 
 const { connectMongoDB } = require('./config/mongo');
 const mongoRoutes = require('./routes/mongoRoutes');
+const emergencyRoutes = require('./routes/emergencyRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -22,6 +23,7 @@ const PORT = process.env.PORT || 5000;
 connectMongoDB();
 
 app.use(express.json());
+
 
 // Enable CORS for frontend clients
 app.use((req, res, next) => {
@@ -33,6 +35,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/mongo', mongoRoutes);
+app.use('/api/emergency', emergencyRoutes);
 
 // Root endpoint
 app.get('/', (req, res) => {
@@ -59,7 +62,8 @@ app.get('/', (req, res) => {
       'GET /api/mongo/query/elem-match',
       'GET /api/mongo/query/array-size',
       'GET /api/mongo/query/sort-pagination',
-      'GET /api/mongo/query/aggregation'
+      'GET /api/mongo/query/aggregation',
+      'GET /api/emergency/intelligence'
     ]
   });
 });
